@@ -1,0 +1,1167 @@
+* {margin: 0; padding: 0} /* implicitni nastaveni pro vsechny objekty */
+
+/* Verze 31.10.2011
+ * dokumentace na https://is.muni.cz/auth/el/1433/test/s_zakazky/design/unicss/uniCss-verze.txt */
+
+body { /* globalni nastaveni stranky, obrazku obtekani a odkazu */
+	text-align: center;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #333;
+	line-height: 1.5em;
+  background: url("../design/w.png") 0px 0px repeat-x #fff; /* horni podkladovy pruh pod hlavickou */
+}
+img {border: 0px}
+#text img.nbf {border: 0px; float: none}
+.fll {float: left}
+.flr {float: right}
+.fln {float: none}
+.cll {clear: left}
+.clr {clear: right}
+.cl  {clear: both}
+
+/* spedificke odkazy */
+.ext_blank {padding-right: 14px; background: url("../design/ext_blank.bmp") 100% 90% no-repeat;}
+.ext_mail {padding-right: 17px; background: url("../design/ext_mail.bmp") 100% 90% no-repeat;}
+.ext_down {padding-right: 12px; background: url("../design/ext_down.bmp") 100% 90% no-repeat;}
+.ext_base {padding-right: 8px; background: url("../design/ext_base.bmp") 100% 60% no-repeat;}
+.ext_pdf {padding-right: 18px; background: url("../design/ext_pdf.bmp") right no-repeat;}
+.ext_doc {padding-right: 18px; background: url("../design/ext_doc.bmp") right no-repeat;}
+.int_dict {padding-right: 17px; background: url("../design/int_dict.bmp") right 70% no-repeat;}
+/* odkazy s mensi prioritou */
+.silver a, .silver a:visited, 
+a.silver, a.silver:visited, a.lit, a.lit:visited, .lit a, .lit a:visited {color: #666;}
+
+
+/* zakl. formatovani */
+p {	margin: 5px 0px 5px 0px}
+strong {color: #333; font-size: 100%;}
+table strong {color: #000; font-size: 100%;}
+sub, sup {font-size: 8px;}
+acronym, abbr {cursor: help; border-bottom: 1px dotted #aaa;}
+.overln {text-decoration: overline;} /* nadtrzitko */
+.nowr {white-space: nowrap;} /* nedelitelna cast */
+
+sup a, sup a:visited { /* klikaci horni index, vhodne pro pozn. pod carou */
+  margin: 0px 2px 0px 2px;
+  padding: 0px 3px 0px 3px;
+  text-decoration: none;
+  background: #eee;
+  color: #0e4400!important;
+  font-size: 9px;
+  font-weight: bold;
+}
+sup a:hover {
+  background: #777;
+  color: #fff!important;
+}
+
+/* access */
+#accessKey {visibility: hidden;display:none}
+
+/* pristupnost */
+a.belowh, a.belowh:visited { /* hlavicka */
+  position: absolute; left:0; top:0;
+  z-index:-1;
+  padding-top: 20px;
+  overflow: hidden;
+  display: block;
+}
+.below {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.below span {
+  width: 100%;
+  height: 50px;
+  position: absolute; left:0; top:0;
+  z-index:1;
+  display: block;
+  background: url("../design/below.png") no-repeat; 
+}
+
+.belowT { /* text pod flash */
+  position: absolute; left:0; top:0;
+  z-index: -1;
+}
+
+/* layout stranek */
+
+#soul { /* podklad dokumentu */ 
+	width: 100%;
+	padding: 20px 0px 20px 0px;
+  position: relative;
+}
+#body { /* telo dokumentu */
+	margin-left: auto;
+	margin-right: auto;
+	background: url("../design/body.png") repeat-y #fff;
+	z-index: 1; position: relative;
+}
+#head, #head a { /* klikaci hlavicka */
+  height: 150px;
+  display: block;
+  background: url("../design/head.png") no-repeat;
+  text-decoration: none;
+}
+#left { /* leva cast tela - menu */
+  float: left;
+  min-height: 400px;
+  margin: 0px 10px 10px 20px;
+  padding: 10px 0px 0px 0px;
+	font-size: 11px;
+	background: url("../design/menu.jpg") 0px 10px no-repeat;
+}
+#text { /* prava cast tela - text */
+  float: left;
+	margin: 10px 30px 10px 8px;
+  text-align: justify;
+	text-indent: 30px;
+}
+#base { /* paticka a jeji casti */
+  height: 50px;
+	padding: 10px 0px 0px 0px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
+	color: #777;
+	font-size: 11px;
+	text-align: center;
+	line-height: 110%;
+	word-spacing: -1px;
+  background: url("../design/base.jpg") center no-repeat #fff;
+  clear: both;
+}
+#basel, #baser {
+	float: left;
+	text-align: right;
+}
+#baser {text-align: left;}
+#basepic { /* logo */
+	float: left;
+	width: 80px;
+  margin: -5px 0px 0px 0px;
+	text-align: center;
+}
+
+.ray { /* reklamni prouzek */ 
+  float: right;
+  width: 40px;
+  margin-right: 1px;
+  position: absolute;
+  top: 0px;
+  right: 8px;
+}
+.rayn, .rayn a, .rayn a:visited, .rayn a:hover { /* odkaz */
+	display: block;
+	float: left;
+	padding: 0px;
+	width: 40px;
+	text-decoration: none;
+}
+a.xray1       {background: url("../design/xray.png"); height: 155px; margin-bottom: 15px;}
+a.xray1:hover {background: url("../design/xray.png") 40px 0px;}
+a.xray2       {background: url("../design/xray.png") 0px -170px; height: 180px;}
+a.xray2:hover {background: url("../design/xray.png") 40px -170px;}
+a.xray3       {background: url("../design/xray.png") 0px -350px; height: 120px;}
+a.xray3:hover {background: url("../design/xray.png") 40px -350px;}
+
+.upper { /* navigacni ikony */
+  margin: 4px 0px -4px 0px;
+  float: right;
+  width: 70px;
+  height: 24px;
+  text-align: left;
+  position: relative; z-index: 1; /* pristupnost(1) */
+}
+.upper a, .upper a:visited {
+  width: 70px;
+  display: block;
+  text-decoration: none;
+}
+a.up, a.up:visited {height: 24px;background: url("../design/upper.png") 100% 4px no-repeat;}
+a.up:hover {background: url("../design/upper.png") 100% -20px no-repeat;}
+.upper a.up span {z-index: -1;position: absolute;left: 0px;font-size:10px}
+
+/* nadpisy */
+h1, h2, h3, h4, h5, h6 { /* nadpisy a dedeni */
+	margin-bottom: -18px;
+	padding: 3px 0px 18px 30px;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	color: #000;
+	text-indent: 0px;
+	background: url("../design/h1.png") no-repeat;
+	text-align: left;
+}
+h2 {
+  padding-top: 10px;
+	background: url("../design/h2.png") no-repeat;
+	margin-top: 5px;
+}
+h3, h4 { /* podnadpisy */
+  padding-top: 3px;
+  padding-bottom: 15px;
+	font-size: 14px;
+	background-image: none;
+}
+h4 {font-size: 13px;}
+h5, h6 { /* nadpis h5 */
+	background-image: none;
+	padding-bottom: 0px;
+	margin-bottom: -5px;
+	/*margin-left: 30px;*/
+	margin-top: 15px;
+	font-size: 12px;
+	color: #888;
+	font-weight: bold;
+}
+h6 {
+	font-size: 11px;
+}
+
+h1 a, h1 a:visited, h2 a, h2 a:visited { /* nadpisy s navratem nahoru (upper) */
+  width: 94%;
+  display: block;
+  padding-right: 40px;
+  text-decoration: none;
+  background: url("../design/upper.png") 100% 2px no-repeat;
+}
+h2 a, h2 a:visited {height: 23px}
+h1 a:hover, h2 a:hover {background: url("../design/upper.png") 100% -22px no-repeat}
+
+h3.videolist { /* nadpis u video-rozcestníku */
+	background: url("../design/h3vid.png") 0px 2px no-repeat;
+	font-size: 13px;
+}
+
+/* seznamy (odrazkove a cislovane) */
+
+#text ul, #text ol {
+  margin: 15px 0px 30px 30px;
+  padding-right: 10px;
+  text-indent: 0px;
+}
+#text ul.border1, #text ol.border1 {
+	margin-left: 0px;
+}
+#text li, #text ul ul ul li, #text ol ol ul li, #text ul ol ul li, #text ol ul ul li {
+  padding: 0px 10px 0px 30px;
+  margin-left: 0px;
+  list-style: none;
+  background: url("../design/li.png") 0px 4px no-repeat;
+}
+#text ul ul li, #text ol ul li {
+  color: #555;
+  background: url("../design/li2.png") 20px 3px no-repeat;
+  padding-left: 50px;
+}
+#text ol ul li {
+  list-style-type: none;
+}
+#text ul ul, #text ol ol, #text ul ol, #text ol ul {
+  margin-left: -30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-left: 10px solid #f7f7f7;
+}
+#text ul ul ul li, #text ol ol ul li, #text ul ol ul li, #text ol ul ul li {
+  padding-left: 50px;
+  background: url("../design/li.png") 20px 4px no-repeat;
+}
+#text ul ul ul, #text ol ol ol, #text ul ol ul, #text ul ol ol, #text ol ol ul, #text ol ul ul, #text ul ul ol, #text ol ul ol {
+  margin-left: -30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-left: 10px solid #fafafa;
+}
+#text ul ul ol li, #text ol ul ol li {
+  padding-left: 10px;
+  background: none;
+}
+ul h3, ul h4, ol h3, ol h4 {
+  margin-bottom: 5px;
+  padding: 3px 0px 5px 0px;
+  border-bottom: 1px solid #eee;
+}
+ol {
+  padding: 0px 20px 0px 20px
+}
+ol ol, ul ol {
+  padding: 0px 20px 0px 40px
+}
+ul p, ol p {
+	text-indent: 0px;
+}
+#text ol li, #text ol ol li {
+  padding: 0px 20px 0px 10px;
+  list-style-type: decimal;
+  background: none;
+  margin-left: 0px;
+}
+
+#text ol.alp li { /* pismenne cislovani */
+	list-style-type: lower-alpha!important;
+	background: none;
+}
+#text ol.alp ul {
+  margin-left: -30px;
+  padding: 0px 10px 0px 30px;
+  border-left: 10px solid #f7f7f7;
+}
+#text ol.alp ul li {
+  margin-left: -30px;
+  padding: 0px 10px 0px 50px; 
+  list-style-type: none!important;
+  background: url("../design/li.png") 20px 4px no-repeat;
+}
+#text ol.it li {list-style-type: upper-roman!important;} /* rimske cislovani */
+#text ol.it ul {
+  margin-left: -30px;
+  padding: 0px 10px 0px 30px;
+  border-left: 10px solid #f7f7f7;
+}
+#text ol.it ul li {
+  margin-left: -30px;
+  padding: 0px 10px 0px 50px; 
+  list-style-type: none!important;
+  background: url("../design/li.png") 20px 4px no-repeat;
+}
+
+
+/* tabulky */
+
+table {
+  width: 100%;
+  margin: 15px 0px 15px 0px;
+  border-collapse: collapse;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+  color: #555;
+  text-indent: 0px;
+}
+tr, td, th {
+  border: 0px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+th {
+  border-color: #ddd;
+  text-align: center;
+  font-size: 12px;
+  color: #111;
+}
+#body table ul {
+  border-left: 1px solid #f2f2f2;
+  padding-left: 29px;
+  text-align: left;
+  margin-left: 0px;
+}
+.tab-pad10 tr td, .tab-pad10 tr th {
+  padding: 10px;
+}
+.tab-pad5 tr td, .tab-pad5 tr th {
+  padding: 5px;
+}
+td.tab-pad10 {
+  padding: 10px!important;
+}
+td.tab-pad5 {
+  padding: 5px!important;
+}
+table.tab-center tr td, tr.tab-center td {
+	text-align: center;
+}
+.tab-center {
+	text-align: center!important;
+}
+table.tab-left tr td, tr.tab-left td {
+	text-align: left;
+}
+.tab-left {
+	text-align: left!important;
+}
+table.tab-right tr td, tr.tab-right td {
+	text-align: right;
+}
+.tab-right {
+	text-align: right!important;
+}
+.tab-top {
+	vertical-align: top;
+}
+.tab-bottom {
+	vertical-align: bottom;
+}
+.tab-border tr td {
+	border: 1px solid #eee;
+}
+
+.tablight, .tablight tr, .tablight td { /* bezbarierova tabulka */
+  border: none;
+  padding: 2px 4px 2px 4px;
+  text-align: center;
+}
+
+/* ** automatické obarvení řádků tabulky - ODKOMENTUJTE v případě potřeby 
+** ** - není CSS2.1 validní, NEFUNGUJE v IE6-8, připraveno pro přechod na CSS3  */
+
+
+.fa-f5 tr td { background: #fafafa; }
+.fa-f5 tr:nth-of-type(odd) td { background: #f5f5f5; }
+
+
+.f5, th {background: #f5f5f5} 
+.fa {background: #fafafa;}
+
+
+table h3 {margin-top: 7px}
+
+/* vlastni styly */
+
+.subtext { /* text pod menu */
+  margin: 10px 20px 0px 20px;
+  padding: 20px;
+  text-align: left;
+  font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  line-height: 120%;
+  background: #fafafa;
+}
+.border1 { /* odsazeni s prouzkem vlevo */
+  margin: 5px 0px 5px 0px;
+  padding: 0px 0px 0px 20px;
+  border-left: 10px solid #f2f2f2;
+}
+ol.border1 { /* oprava pro <ol> */
+  padding-left: 40px;
+}
+
+.quoter { /* okrasne uvozovky - třída pro obalovací div */
+  background: url("../design/quoter.png") 100% 0px no-repeat;
+}
+blockquote { /* okrasne uvozovky - vnitřní třída */
+  margin: 20px 0 20px 0px;
+  padding: 0 70px 0 68px;
+  font-style: italic;
+  background: url("../design/quotel.png") 0px 100% no-repeat;
+  min-height: 50px;
+} 
+
+ul.literature, ol.literature { /* Seznam literatury, nebo jiný seznam s větším oddělením */
+	padding-top: 10px;
+	text-align: left;
+	margin-left: 0px!important;
+}
+ul.literature li, ol.literature li {
+	margin-top: 20px!important;
+	padding-bottom: 20px!important;
+	border-bottom: 1px dotted #ddd;
+}
+a.lit, a.lit:hover, a.lit:visited, a.lit:active, .lit a, .lit a:hover, .lit a:active, .li a:visited {
+	font-size: 12px;
+	font-family: "Courier New", courier, monospace;
+}
+
+.line, hr { /* opticke horiz. oddeleni */
+  border: none;
+  border-top: 2px solid #ddd;
+  padding-bottom: 3px;
+  border-bottom: 2px solid #eee;
+  margin: 15px 0px;
+}
+.cite { /* citace */
+  margin: 20px 0px 20px 0px;
+  padding: 5px 40px 0px 30px;
+  font-size: 11px;
+  line-height: 110%;
+  text-indent: 0px;
+  background: url("../design/cite.png") no-repeat;
+  text-align: left;
+}
+.cite sup {font-weight: bold}
+
+.pager {
+  margin: 10px 50px 10px 50px;
+  border-top: 1px dotted #ddd;
+  text-indent: 0px;
+  font-family: Lucida Sans Unicode;
+  font-size: 13px;
+  text-align: center;
+}
+
+#lang { /* jazykova lista */
+  width: 100px;
+  height: 20px;
+  float: right;
+  margin-top: -45px;
+  padding-right: 20px;
+  display: block;
+  text-decoration: none;
+  text-align: right;
+}
+#lang img {
+  padding: 8px;
+}
+
+a.clickbox, a.clickbox:visited, a.clickbox:hover { /* box pro zvyrazneni odkazu */
+  display: block;
+  margin: 20px 10px;
+  padding: 25px 5px 25px 80px;
+  text-indent: 0px;
+  text-decoration: none;
+  text-align: left;
+  color: #777;
+}
+a.web, a.pdf, a.img, a.vid, a.odp { /* jednotlive boxy pro odkazy */
+  background-position: 10px center!important;
+  background-repeat: no-repeat!important;
+  border: 1px solid #eee;
+}
+a.web, a.web:hover {
+  background: url("../design/a_web.gif") #f3f9ff;
+  border-color: #ddf2fe;
+}
+a.web:hover {
+  background-color: #eef6ff;
+  border-color: #cce6ff;
+}
+a.pdf, a.pdf:hover {
+  background: url("../design/a_pdf.gif") #fdf3f3;
+  border-color: #f9dddd;
+}
+a.pdf:hover {
+  background-color: #fdeaea;
+  border-color: #f9c9c9;
+}
+a.img, a.img:hover {
+  background: url("../design/a_img.gif") #f5fff3;
+  border-color: #e0fadd;
+}
+a.img:hover {
+  background-color: #eeffea;
+  border-color: #ccf9c9;
+}
+a.vid, a.vid:hover {
+  background: url("../design/a_vid.gif") #f9f9f9;
+  border-color: #e6e6e6;
+}
+a.vid:hover {
+  background-color: #f3f3f3;
+  border-color: #dadada;
+} 
+a.odp, a.odp:hover {
+  background: url("../design/a_odp.gif") #fffae5;
+  border-color: #f9e9c9;
+}
+a.odp:hover {
+  background-color: #fffac9;
+  border-color: #f9e5b0;
+} 
+
+/* Řádkové odkazy na PDF vč. přístupnosti */
+
+.line-link { /* obal */
+  margin: 20px 0px 20px 0px;
+  float: left;
+  width: 320px;
+  height: 80px;
+  text-align: left;
+  position: relative; z-index: 1; /* pristupnost(1) */
+}
+.line-link a, .line-link a:visited {
+  width: 320px;
+  height: 80px;
+  display: block;
+  text-decoration: none;
+}
+.line-link a span {z-index: -1;position: absolute;left: 0px;font-size:10px}
+
+/* pro přidání dalšího druhu odkazu zkopírujte následující dva řádky, změňte název třídy a odkaz na soubor */
+a.line-pdf, a.line-pdf:visited {background: url("../design/pdf_line2.png") 100% 0px no-repeat;}
+a.line-pdf:hover {background: url("../design/pdf_line2.png") 100% -80px no-repeat;}
+
+
+
+/* obrazky a galerie */
+
+
+
+#text img {
+  float: right;
+  margin: 10px 0px 5px 15px;
+  padding: 3px;
+  border: 1px solid #ccc;
+  border-right: 10px solid #ddd;
+}
+
+
+#text .nob, #text .galhor .nob {border: none!important; margin-top: 0px; padding: 0px} /* obrazek bez okraje */
+
+#text .gal, .info { /*  galerie s popisky pod obrazky */
+	float: left;
+  text-indent: 0px;
+	text-align: center;
+	font-size: 11px;
+	color: #777;
+  line-height: 125%;
+  margin: 10px 0px 5px 15px;
+}
+#text .gal img, #text .galhor img, #text .pic img { /* galerie */
+  float: none;
+  border: 2px solid #ddd;
+  text-indent: 0px;
+  background: #fff;
+  margin: 10px 0px 5px 0px;
+}
+#text .pic img {
+	margin: 10px 5px 5px 5px;
+}
+#text .pic {
+	margin: 20px 0px 20px 0px; 
+	text-indent: 0px;
+	text-align: center;
+	color: #777;
+}
+.galhor { /* horizontalni galerie */
+	margin: 10px 0px 10px 0px;
+	padding: 8px 10px 16px 10px;
+	text-indent: 0px;
+	border: 1px solid #ddd;
+	border-bottom: 3px solid #eee;
+  text-align: center;
+  background: #f7f7f7;
+  font-family: Lucida Grande, Lucida Sans Unicode, Lucida Sans, Arial, Helvetica, sans-serif;  
+  font-size: 11px;
+  color: #777;
+  line-height: 110%;
+}
+#text .gal2 { /* galerie s popisky vedle obrazku */
+  float: left;
+  border: 2px solid #ddd;
+  margin: 10px 15px 10px 5px;
+}
+.info { /*  popisek galerie vedle obrazku */
+  float: none;
+  margin: 10px 5px 10px 10px;
+  text-align: left;
+}
+#text .gal em {color: #aaa;}
+#text img.ia:hover,  #text .ia img:hover, .ia img:hover {border-color: #aaa}
+
+/* stream, flash */
+
+.videoobject {
+	margin-top: 20px; 
+	margin-bottom: 20px;
+	margin-left: 0px;
+	text-indent: 0px;
+	text-align: center;
+}
+
+/* rozcestník - seznam kapitol */
+#cap-box {
+	display: block;
+	width: 600px;
+	margin: 30px;
+	overflow: hidden;
+	padding: 0px;
+	text-indent: 0px;
+}
+#cap-box a, #cap-box span.empty {
+  display: block;
+  margin: -1px -1px;
+  padding: 10px 10px 10px 80px;
+  text-indent: 0px;
+  text-decoration: none;
+  text-align: left;
+  width: 208px;
+  height: 40px;
+  float: left;
+}
+#cap-box a .cap-num {
+	font-size: 95px;
+	margin: -10px 0px 30px -85px;
+	padding: 15px 15px 0px 0px;
+	height: 59px;
+	display: block;
+	font-weight: bold;
+	overflow: hidden;
+	background: none;
+	float:left;
+	letter-spacing: -25px;
+}
+#cap-box a .cap-num-hov {
+	font-size: 25px;
+	margin: 23px -8px 30px 0px;
+	padding: 5px 5px 0px 0px;
+	letter-spacing: -5px;
+	height: 59px;
+	display: block;
+	font-weight: bold;
+	overflow: hidden;
+	float: right;
+	text-align: right;
+}
+
+/* Tiráž publikace */
+
+.tiraz {
+  display: block;
+  margin: 20px 10px;
+  padding: 35px;
+  text-indent: 0px;
+  text-decoration: none;
+  text-align: left;
+  color: #777;
+  background: url("../design/tiraz-back.png") left top no-repeat #f9f9f9;
+  border: 1px solid #e6e6e6;
+}
+.tiraz h3 {
+	padding-left: 0px;
+	/*font-size: 13px;*/
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.tiraz h2 {
+	letter-spacing: -3px;
+	background: none;
+	padding: 0px;
+	margin: -18px 0px 10px -28px;
+	color: #e6e6e6;
+	font-size: 40px;
+}
+
+
+/* Logolink pod stránkou */
+
+#logoline { /* box pro logolink */
+	padding: 0px;
+	color: #888;
+	font-size: 11px;
+	text-align: center;
+	line-height: 150%;
+	background-color: #fff;
+	clear: both;
+	word-spacing: -1px;
+}
+#logotext { /* povinný text nalevo */
+	float: left;
+	text-align: left;	
+	padding-top: 12px;
+}
+#logotext p { /* povinný text nalevo */
+	padding-right: 5px;
+}
+#logolink { /* logolink - vpravo */
+	float: left;
+	text-align: right;
+	font-weight: bold;
+	color: #999;
+	padding-top: 5px;
+}
+#logoup { /* odkaz "nahoru" */
+	float: left;
+	width: 84px;
+	height: 21px;
+	margin: -1px 0px 0px 0px;
+	text-align: center;
+	background: url("../design/logoupback.bmp") 0px 0px repeat-x #fff;
+	border: 1px solid #eee;
+	border-top: 1px solid #fff;
+	padding-top: 3px;
+}
+#logoup a, #logoup a:visited, #logoup a:hover, #logoup a:active {
+	padding: 7px 10px 7px 20px;
+	background: url("../design/logoupico.bmp") no-repeat 9px 9px;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+/* ****************/
+/*  VYBER LAYOUTU */
+/* ****************/
+
+#head, #head a, #body {width: 980px;} 
+#left {width: 260px;}
+#text {width: 652px;}
+#basel, #baser {width: 450px;}
+.menu span, .menu a, .menu2 a, .menu3 a, 
+.menu a:visited, .menu2 a:visited, .menu3 a:visited, .menu span {width: 240px;}
+.menu2 a, .menu2 a:visited, .menu a.act, .menu a.act:visited {width: 220px;}
+.menu3 a, .menu3 a:visited {width: 200px;}
+.menu4 a, .menu4 a:visited {width: 180px;}
+.menu a:hover {width: 230px;}
+.menu2 a:hover {width: 215px;}
+.menu3 a:hover {width: 198px;}
+.menu4 a:hover {width: 179px;}
+.menu a.act:hover {width: 220px;}
+.menu2 a.act:hover {width: 210px;}
+.menu3 a.act:hover {width: 195px;}  
+.menu2 a.act, .menu2 a.act:visited {width: 210px;}
+.menu3 a.act, .menu3 a.act:visited {width: 195px;}
+#logolink, #logotext {width: 447px;}
+
+/* ctyr-radkova paticka (pro pouziti odkomentujte) */
+
+/*
+#base {height: 60px;}
+#basepic {margin: 0px;}
+*/
+
+/* *****************/
+/*  NASTAVENI MENU */
+/*  klasicke menu  */
+/* *****************/
+
+/* uprava bilych ramecku v levem menu */
+#left .menu a, #left .menu span { position: relative; border-top: 0px none;}
+#left .menu a:before, #left .menu span:before 
+{  
+  position: absolute;   
+  display: block;    
+  width: 260px;    
+  top: 0; 
+  left: 0; 
+  content: " "; 
+  border-top: 1px solid #fff;  
+  text-indent: 0; 
+  font-size: 0px; 
+  line-height: 0;
+}
+
+.menu span, .menu a, .menu2 a, .menu3 a, .menu4 a,
+.menu a:visited, .menu2 a:visited, .menu3 a:visited, .menu4 a:visited, .menu span { /* polozka */
+  display: block;
+  padding: 2px 0px 2px 20px;
+  border-top: 1px solid #fff;
+  text-decoration: none;
+  text-align: left;
+  background: url("../design/mlist.bmp") no-repeat 7px 9px;
+}
+.menu2 a, .menu2 a:visited { /* polozka 2. urovne */
+  padding-left: 40px;
+  background: url("../design/msub.bmp") no-repeat 20px 8px;
+}
+.menu3 a, .menu3 a:visited { /* polozka 3. urovne */
+  padding-left: 60px;
+  background: url("../design/msub.bmp") no-repeat 40px 8px;
+}
+.menu4 a, .menu4 a:visited { /* polozka 4. urovne */
+  padding-left: 80px;
+  background: url("../design/msub.bmp") no-repeat 60px 8px;
+}
+.menu a:hover { /* hover polozky */
+  background-color: #fff;
+}
+
+.menu a.act, .menu a.act:visited { /* aktualni polozka */
+  font-weight: bold;
+  background: url("../design/mact.bmp") no-repeat 7px 9px;
+}
+.menu2 a.act, .menu2 a.act:visited { /* aktualni polozka 2. urovne */
+  background-position: 21px 9px;
+}
+.menu3 a.act, .menu3 a.act:visited { /* aktualni polozka 3. urovne */
+  background-position: 41px 9px;
+}
+
+.menu a.other:hover {color: #777;} /* hover specialni polozky */
+
+.menu span { /* nadpisy a mezery */
+  padding-left: 7px;
+  background: none;
+  font-size: 13px;
+  font-weight: bold;
+}
+.menu2 span {padding-left: 20px;}
+.menu3 span {padding-left: 40px;}
+
+/* ******************/
+/*  NASTAVENI BAREV */
+/* ******************/
+
+.silver a:active, .silver a:hover, a.silver:hover, a.lit:hover, .lit a:hover {color: #0e4400;}
+a, a:visited {color: #0e4400}
+a:active, a:hover {color: #3eac16; text-decoration: none}
+#base a:link, #base a:visited, #baser a:link, #baser a:visited {color: #888}
+#base a:active, #base a:hover, #baser a:active, #baser a:hover {color: #0e4400}
+
+h2 {color: #0e4400}
+h3 {color: #3eac16}
+h4 {color: #777}
+em {color: #1e3e08} 
+
+.t1, .t1 strong, .t1 em {background: #1e3e08!important; color: #fafafa;}
+.t2, .t2 strong, .t2 em {background: #0e4400!important; color: #fafafa;}
+.t3, .t3 strong, .t3 em {background: #3eac16!important; color: #fafafa;}
+
+blockquote {color: #1e3e08;} /* okrasne uvozovky */
+blockquote strong {color: #1e3e08;} /* strong uvnitř okrasných uvozovek */
+
+/* rozcestník */
+#cap-box { background-color: #f5f5f5; }
+#cap-box a, #cap-box span.empty { color: #777; background-color: #f5f5f5; border: 2px solid #fff; }
+#cap-box a .cap-num { color: #e5e5e5; }
+#cap-box a:hover { color: #3eac16; background-color: #ddd; }
+#cap-box a:hover .cap-num {	color: #3eac16; }
+#cap-box a .cap-num-hov { color: #f5f5f5; }
+
+.menu span, .menu a, .menu2 a, .menu3 a, .menu4 a, 
+.menu a:visited, .menu2 a:visited, .menu3 a:visited, .menu4 a:visited, .menu span { /* polozka */
+  color: #000;
+}
+
+.menu a:hover { /* hover polozky */
+  border-right: 10px solid #0e4400;
+  color: #0e4400;
+}
+.menu2 a:hover { /* hover polozky 2. urovne */
+  border-right: 5px solid #3eac16;
+  color: #3eac16;
+}
+.menu3 a:hover { /* hover polozky 3. urovne */
+  border-right: 2px solid #0e4400;
+  color: #0e4400;
+}
+.menu4 a:hover { /* hover polozky 4. urovne */
+  border-right: 1px solid #3eac16;
+  color: #3eac16;
+}
+
+.menu a.act, .menu a.act:visited { /* aktualni polozka */
+  border-right: 20px solid #0e4400;
+}
+.menu2 a.act, .menu2 a.act:visited { /* aktualni polozka 2. urovne */
+  border-right: 10px solid #3eac16;
+}
+.menu3 a.act, .menu3 a.act:visited { /* aktualni polozka 3. urovne */
+  border-right: 5px solid #0e4400;
+}
+
+.menu a.other, .menu a.other:visited {color: #0e4400;} /* specialni polozka */
+.menu2 a.other, .menu2 a.other:visited {color: #3eac16;} /* specialni polozka 2. urovne */
+.menu3 a.other, .menu3 a.other:visited {color: #0e4400;} /* specialni polozka 3. urovne */
+
+/* web ma tri druhy barev - staci vzdy hromadne nahradit ctrl+h
+em: 1e3e08
+h2, menu: 0e4400
+h3, podmenu, odkazy: 3eac16
+*/
+
+/* ramecky */
+div.poznamka, div.lemma, div.veta, div.dusl, div.dukaz {
+  margin: 20px 0px;
+  padding: 15px 15px 15px 70px;
+  text-indent: 0px;
+} 
+
+div.poznamka {
+  background: #e2fada url("../design/note.png") 10px 10px no-repeat;
+  border: 1px solid #1e3e08;
+}
+
+div.lemma {
+  background: #f1edf9 url("../design/definition.png") 10px 10px no-repeat;
+  border: 1px solid #6234a0;
+}
+
+div.veta {
+  background: #fffce5 url("../design/theorem.png") 10px 10px no-repeat;
+  border: 1px solid #ccc000;
+}
+
+div.dusl {
+  background: #f3f9ff url("../design/dusl.png") 10px 10px no-repeat;
+  border: 1px solid #379;
+}
+
+div.dukaz {
+  background: #fdf3f3 url("../design/dukaz.png") 10px 10px no-repeat;
+  border: 1px solid #a55;
+}
+
+div.poznamka .caption, div.lemma .caption, div.veta .caption, div.dusl .caption, div.dukaz .caption {
+  font-weight: bold;
+  margin-bottom: 4px;  
+}
+
+div.box {
+	width: 100%;
+	text-align: right;
+}
+
+/* algoritmy */
+
+.code03 {
+  line-height: 150%;
+  display: block;
+  margin: 20px 0px;
+  padding: 15px 20px;
+  text-indent: 0px;
+  text-align: left;
+  color: #333;
+    background-color: #f5fff3;
+  border: 1px solid #e0fadd;
+  border: 1px solid #080;
+}
+
+.code03 h3 {
+	padding-left: 0px;
+}
+
+
+span.blue {color: #0000bb; }    
+span.purple {color: #ad0080;}     
+span.grey {color: #777;}        
+span.red {color: #ad0000;}       
+span.green {color: #080; font-weight: bold;}
+
+/* odsazeni v algoritmech */
+.em{
+	margin-left: 1em;
+	
+}
+.emm {
+	margin-left: 2em;
+}
+.emmm {
+	padding-left: 3em;
+}
+.emmmm {
+	padding-left: 4em;
+}
+.emmmmm {
+	padding-left: 5em;
+}
+.emmmmmm {
+	padding-left: 6em;
+}
+
+.smallCaps {
+	font-variant: small-caps;
+    font-size: 120%;
+}
+
+.longAlg {
+    text-indent: -1em;
+}
+
+
+/* překryto kvuli mathjax */
+#text .mrow img {
+	float: none;
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+/* odstrani nezadouci indent */
+.noind {
+	text-indent: 0px;
+}
+
+/* popisky tabulek */
+#text .tbl {
+	margin: 20px 0px 20px 0px; 
+	text-indent: 0px;
+	text-align: center;
+	color: #777;
+}
+
+/* CPlayer */
+canvas {
+    background: lightyellow;
+/*    display: inline-block;*/
+/*    vertical-align: top;*/
+/*    margin-top: 5px;*/
+}
+
+.controlFrame {
+    margin: 0 auto;
+    height: 30px;
+}
+.jumpFW, .jumpBW, .playFW, .playBW, .pause {
+    margin: 0 5px;
+    float: left;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+}
+
+.pause {
+    width: 70px;
+}
+
+.jumpBW, .jumpBW:visited {
+    background: url(../design/CPButtons.png) 0 0 no-repeat transparent;
+}
+
+.jumpBW:hover {
+    background: url(../design/CPButtons.png) 0 -30px no-repeat transparent;
+}
+
+.jumpBW:active {
+    background: url(../design/CPButtons.png) 0 -60px no-repeat transparent;
+}
+
+.playBW, .playBW:visited {
+    background: url(../design/CPButtons.png) -30px 0 no-repeat transparent;
+}
+
+.playBW:hover {
+    background: url(../design/CPButtons.png) -30px -30px no-repeat transparent;
+}
+
+.playBW:active {
+    background: url(../design/CPButtons.png) -30px -60px no-repeat transparent;
+}
+
+.playFW, .playFW:visited {
+    background: url(../design/CPButtons.png) -60px 0 no-repeat transparent;
+}
+
+.playFW:hover {
+    background: url(../design/CPButtons.png) -60px -30px no-repeat transparent;
+}
+
+.playFW:active {
+    background: url(../design/CPButtons.png) -60px -60px no-repeat transparent;
+}
+
+.jumpFW, .jumpFW:visited {
+    background: url(../design/CPButtons.png) -90px 0 no-repeat transparent;
+}
+
+.jumpFW:hover {
+    background: url(../design/CPButtons.png) -90px -30px no-repeat transparent;
+}
+
+.jumpFW:active {
+    background: url(../design/CPButtons.png) -90px -60px no-repeat transparent;
+}
+
+.pause, .pause:visited {
+    background: url(../design/CPButtons.png) -120px 0 no-repeat transparent;
+}
+
+.pause:hover {
+    background: url(../design/CPButtons.png) -120px -30px no-repeat transparent;
+}
+
+.pause:active {
+    background: url(../design/CPButtons.png) -120px -60px no-repeat transparent;
+}
+
+.textArea {
+    padding: 10px;
+    background-color: #f5fff3;
+}
+figure {
+    text-indent: 0;
+    border: 1px solid #080;
+    margin: 20px auto;
+}

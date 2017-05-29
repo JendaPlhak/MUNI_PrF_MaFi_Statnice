@@ -1,0 +1,3 @@
+Výroková - http://statnice.dqd.cz/home:inf:ap4
+Predikátová - http://statnice.dqd.cz/home:inf:ap14
+Zbytek a všechno - https://www.fi.muni.cz/usr/kucera/teaching/logic/logika.pdf

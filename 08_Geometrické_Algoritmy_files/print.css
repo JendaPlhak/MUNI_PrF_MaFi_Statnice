@@ -1,0 +1,99 @@
+* {margin: 0; padding: 0} /* implicitni nastaveni pro vsechny objekty */
+
+/* Verze 03 (20.07.2011)
+ * dokumentace na https://is.muni.cz/auth/el/1433/test/s_zakazky/design/unicss/uniCss-verze.txt */
+
+body { /* globalni nastaveni stranky, obrazku a odkazu */
+	font-family: Trebuchet MS, Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333;
+	text-align: justify;
+	margin: 10px;
+}
+
+#text {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+  border-bottom: 5px solid #ccc;
+}
+
+h1, h2, h3, h4, h5 {margin: 8px 0px 0px 0px}
+h1 {font-size: 23px}
+h2, h3 {font-size: 20px}
+h4, h5, li h3 {font-size: 18px}
+p {padding: 4px 0px 4px 0px}
+li p, li li p, li li li p {padding: 2px 0px 2px 0px}
+
+a, em, .t1, .t2, .t3 {color: #a2200a}
+img {border: 1px solid #777}
+
+.rayn, #head, ul.hmenu, .menu, .subtext, .hmenu, .menux, #mainmenu, 
+.belowh em, #lang, .print, .akS, #accessKey, #lang {
+  visibility: hidden;
+  text-align: right;
+}
+.rayn, ul.hmenu, .menu, .subtext, .hmenu, .menux, #mainmenu, 
+.belowh em, #lang, .print, .akS, #accessKey, #lang {position: absolute}
+
+#head, #head a {
+  min-height: 50px;
+  padding-bottom: 20px;
+  text-align: center;
+  visibility: visible;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+#base { /* paticka a jeji casti */
+  height: 50px;
+	padding: 0px 0px 0px 0px;
+	color: #777;
+	font-size: 11px;
+	text-align: center;
+	line-height: 110%;
+	word-spacing: -1px;
+  background: url("../design/base.jpg") center no-repeat #fff;
+}
+#basel, #baser {
+	float: left;
+	text-align: right;
+}
+#baser {
+	text-align: left;
+}
+#basepic { /* logo */
+	float: left;
+	width: 80px;
+  margin: 0px;
+	text-align: center;
+}
+#basepic img {border:none}
+
+table {
+  margin: 10px;
+  border: 1px solid #777;
+  border-bottom: 0px;
+  width: 98%;
+}
+td, th {
+  border-bottom: 1px solid #777;
+  padding: 0px 10px 0px 10px;
+ 	font-size: 13px;
+ 	text-align: justify;
+}
+
+ul, ol {margin: 10px 0px 10px 15px}
+
+ul li {
+  margin-left: 15px;
+  padding-left: 10px;
+  list-style-type: circle;
+}
+ol li {
+  margin-left: 25px;
+  list-style-type: decimal;
+}
+.cap-num-hov {
+	display: none;
+}
